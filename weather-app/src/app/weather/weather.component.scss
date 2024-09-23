@@ -1,0 +1,142 @@
+$primary-color: #007bff;
+$light-primary-color: #ffecb3; 
+$secondary-color: #0056b3;
+$bg-color: #f0f0f0;
+$text-color: #333;
+$font-size: 16px;
+$border-radius: 12px;
+$icon-size: 50px;
+$background-image: url('/assets/images/background.jpg');
+$background-color: #e0f7fa; 
+
+
+
+.dashboard {
+  background: url('/assets/images/background2.jpg') no-repeat center center fixed;
+  background-size: cover;
+  max-width: 600px;
+  width: 100%; 
+  padding: 20px;
+  background-color: $bg-color;
+  border-radius: $border-radius;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  z-index: 1;
+}
+
+
+  .header {
+    padding-bottom: 20px;
+
+    h2 {
+      font-size: 32px;
+      color:$light-primary-color;
+      margin: 0;
+    }
+
+    .search-container {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+
+      .input-city {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: $border-radius;
+        font-size: $font-size;
+        width: 70%;
+      }
+
+      .get-weather-btn {
+        background-color: $primary-color;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: $border-radius;
+        cursor: pointer;
+        font-size: $font-size;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  .weather-content {
+    margin-top: 30px;
+
+    .weather-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      border-radius: $border-radius;
+      padding: 20px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+      .weather-details {
+        flex: 1;
+
+        h3 {
+          font-size: 24px;
+          color: $primary-color;
+          margin-bottom: 15px;
+        }
+
+        .weather-info {
+          p {
+            font-size: $font-size;
+            color: darken($text-color, 10%);
+            margin: 10px 0;
+
+            span {
+              font-weight: bold;
+              color: $primary-color;
+            }
+
+            .weather-icons {
+              margin-left: 10px;
+              font-size: $icon-size;
+              color: $primary-color;
+            }
+          }
+        }
+      }
+
+      .weather-icon {
+        img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    }
+  }
+
+  .icon {
+    font-size: $icon-size;
+    color: $primary-color;
+  }
+
+  .icon-sun {
+    color: yellow;
+  }
+
+  .icon-cloud {
+    color: gray;
+  }
+
+  .icon-rain {
+    color: blue;
+  }
+
+  .icon-wind {
+    color: lightblue;
+  }
+
+  .icon-humidity {
+    color: lightgreen;
+  }
+

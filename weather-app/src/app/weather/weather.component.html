@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+
+<div class="dashboard">
+  <div class="header">
+    <h2>Weather App</h2>
+    <div class="search-container">
+      <input class="input-city" [(ngModel)]="city" placeholder="Enter city name" />
+      <button class="get-weather-btn" (click)="getWeather()">Get Weather</button>
+    </div>
+  </div>
+
+  <div class="weather-content" *ngIf="weatherData">
+    <div class="weather-card">
+      <div class="weather-details">
+        <h3>{{ weatherData.name }} Weather</h3>
+        <div class="weather-info">
+          <p>
+            <span>Temperature:</span> {{ weatherData.main.temp }} °C
+            <i class="fas fa-thermometer-half weather-icons"></i>
+          </p>
+          <p>
+            <span>Weather:</span> {{ weatherData.weather[0].description }}
+            <i [ngClass]="{
+              'fas fa-sun icon-sun': weatherData.weather[0].main === 'Clear',
+              'fas fa-cloud icon-cloud': weatherData.weather[0].main === 'Clouds',
+              'fas fa-cloud-rain icon-rain': weatherData.weather[0].main === 'Rain',
+              'fas fa-wind icon-wind': weatherData.weather[0].main === 'Wind'
+            }"></i>
+          </p>
+          <p>
+            <span>Humidity:</span> {{ weatherData.main.humidity }}%
+            <i class="fas fa-tint icon-humidity"></i>
+          </p>
+          <p>
+            <span>Wind Speed:</span> {{ weatherData.wind.speed }} m/s
+            <i class="fas fa-wind icon-wind"></i>
+          </p>
+        </div>
+      </div>
+
+      <div class="weather-icon">
+        <img [src]="'http://openweathermap.org/img/wn/' + weatherData.weather[0].icon + '@2x.png'" alt="Weather Icon">
+      </div>
+    </div>
+  </div>
+</div>
